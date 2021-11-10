@@ -45,5 +45,17 @@ public class RouteNode : Comparable<RouteNode> {
 
         public fun optimize(newNode: RouteNode) {
         }
+
+        public fun emitTemplatePathParts(template: String): Sequence<String> {
+            return sequence {
+            }
+        }
+
+        public fun findCommonPrefixLength(
+            left: String,
+            right: String
+        ): Int {
+            return 0
+        }
     }
 }
