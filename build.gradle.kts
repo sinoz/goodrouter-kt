@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
+    `maven-publish`
 }
 
 allprojects {
@@ -37,4 +38,21 @@ allprojects {
 
 dependencies {
     testImplementation("io.kotlintest:kotlintest-runner-junit5:${Versions.kotlinTest}")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("goodrouter-kt") {
+            from(components["java"])
+        }
+    }
+
+    repositories {
+        maven {
+            name = "goodrouter-kt"
+            description = "A good router."
+
+            url = uri(layout.buildDirectory.dir("goodrouter-kt"))
+        }
+    }
 }
