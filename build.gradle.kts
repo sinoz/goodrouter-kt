@@ -34,3 +34,7 @@ allprojects {
         }
     }
 }
+
+dependencies {
+    testImplementation("io.kotlintest:kotlintest-runner-junit5:${Versions.kotlinTest}")
+}
